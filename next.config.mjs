@@ -13,6 +13,17 @@ const nextConfig = {
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
   output: "standalone",
+  images: {
+    domains: ["localhost", "vercel.app"],
+  },
+  webpack(config, { isServer }) {
+    const newConfig = { ...config }
+    newConfig.externals = newConfig.externals || {}
+    if (!isServer) {
+      newConfig.externals.jquery = "jQuery"
+    }
+    return newConfig
+  },
 }
 
 export default nextConfig
