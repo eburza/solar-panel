@@ -10,16 +10,14 @@ const nextConfig = {
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
-  trailingSlash: false,
-  skipTrailingSlashRedirect: true,
   output: "standalone",
   images: {
     domains: ["localhost", "vercel.app"],
+    unoptimized: true,
   },
-  assetPrefix: "",
-  experimental: {
-    optimizeFonts: true,
-    optimizeImages: true,
+  distDir: ".next",
+  generateBuildId: async () => {
+    return "build"
   },
 }
 
