@@ -2,7 +2,6 @@ import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-// GET handler for fetching all evaluations
 export async function GET() {
   const supabase = createRouteHandlerClient({ cookies });
 
@@ -18,7 +17,6 @@ export async function GET() {
   return NextResponse.json(data);
 }
 
-// POST handler for creating a new evaluation
 export async function POST(request: Request) {
   const supabase = createRouteHandlerClient({ cookies });
   const body = await request.json();

@@ -2,7 +2,6 @@ import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-// GET handler for fetching a single evaluation
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
@@ -22,7 +21,6 @@ export async function GET(
   return NextResponse.json(data);
 }
 
-// PUT/PATCH handler for updating an evaluation
 export async function PUT(
   request: Request,
   { params }: { params: { id: string } }
@@ -44,7 +42,6 @@ export async function PUT(
   return NextResponse.json(data);
 }
 
-// DELETE handler for removing an evaluation
 export async function DELETE(
   request: Request,
   { params }: { params: { id: string } }
