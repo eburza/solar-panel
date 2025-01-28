@@ -16,7 +16,11 @@ const nextConfig = {
   images: {
     domains: ["localhost", "vercel.app"],
   },
-  assetPrefix: process.env.NODE_ENV === "production" ? "/_next" : "",
+  assetPrefix: "",
+  experimental: {
+    optimizeFonts: true,
+    optimizeImages: true,
+  },
 }
 
 export default nextConfig
