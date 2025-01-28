@@ -25,13 +25,7 @@ export const metadata: Metadata = {
   title: "Solar Panel App",
   description: "Solar Panel Management System",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-icon.png" },
-    ],
+    icon: "/favicon.svg",
   },
 };
 
@@ -42,6 +36,9 @@ export default function RootLayout({
 }>): React.ReactNode {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      </head>
       <body
         className={cn(
           "flex min-h-screen flex-col antialiased",

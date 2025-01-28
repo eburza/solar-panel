@@ -16,14 +16,7 @@ const nextConfig = {
   images: {
     domains: ["localhost", "vercel.app"],
   },
-  webpack(config, { isServer }) {
-    const newConfig = { ...config }
-    newConfig.externals = newConfig.externals || {}
-    if (!isServer) {
-      newConfig.externals.jquery = "jQuery"
-    }
-    return newConfig
-  },
+  assetPrefix: process.env.NODE_ENV === "production" ? "/_next" : "",
 }
 
 export default nextConfig
